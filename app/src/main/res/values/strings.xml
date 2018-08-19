@@ -4,6 +4,7 @@
     <string name="CalculoFibonacci">Cacular Fibonacci</string>
     <string name="Both">Calcular Ambos</string>
     <string name="History">Todos los Puntajes</string>
-    <string name="Filling">Texto Relleno</string>
+    <string name="Filling">XXXXXX</string>
     <string name="Result">Resultado:</string>
+    <string name="Return">Regresar</string>
 </resources>

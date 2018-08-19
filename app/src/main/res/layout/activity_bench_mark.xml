@@ -34,5 +34,13 @@
         android:textSize="60sp"
         android:layout_marginTop="@dimen/top"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ButtonWhite"
+        android:text="@string/Return"
+        android:layout_marginTop="@dimen/top"
+        android:onClick="Return"/>
+
 
 </android.widget.LinearLayout>

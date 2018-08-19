@@ -1,7 +1,11 @@
 package comkenlallemand.httpsgithub.ultimatemathbenchmark;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,34 +21,41 @@ public class BenchMark extends AppCompatActivity {
         Head = findViewById(R.id.head);
         String nombre = getIntent().getStringExtra("name");
 
+        long ini,fin;
+
+
         switch (nombre){
             case "Calculo de PI": {
                 Head.setText(nombre);
-                double ini = System.nanoTime();
+                ini = milis();
                 Pi();
-                double fin = System.nanoTime();
+                fin = milis();
+                //System.out.println(ini);
+                //System.out.println(fin);
                 Resultado.setText(String.valueOf(fin - ini));
                 break;
             }
 
             case "Calculo de Fibonacci": {
                 Head.setText(nombre);
-                double ini = System.nanoTime();
+                ini = milis();
                 Fibonacci();
-                double fin = System.nanoTime();
+                fin = milis();
+                System.out.println(ini);
+                System.out.println(fin);
                 Resultado.setText(String.valueOf(fin - ini));
                 break;
             }
 
             case "Calculo Completo": {
                 Head.setText(nombre);
-                double ini = System.nanoTime();
+                ini = milis();
                 Pi();
-                double fin = System.nanoTime();
+                fin = milis();
                 Resultado.setText(String.valueOf(fin - ini));
-                ini = System.nanoTime();
+                ini = milis();
                 Fibonacci();
-                fin = System.nanoTime();
+                fin = milis();
                 Resultado.setText(Resultado.getText()+"\n"+String.valueOf(fin - ini));
                 break;
             }
@@ -93,5 +104,25 @@ public class BenchMark extends AppCompatActivity {
             b = temp;
         }
         System.out.println(b);
+    }
+
+    private long milis(){
+        return System.currentTimeMillis();
+    }
+
+    public void Return(View view){
+        Intent anterior = new Intent(this,MainActivity.class);
+        startActivity(anterior);
+    }
+
+    private void save(){
+        SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        Toast.makeText(this, "Funcionando", Toast.LENGTH_SHORT).show();
+        String texto = preferencias.getString("Resultados","");
+
+        //SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferencias.edit();
+        obj_editor.putString("Resultados",texto + Head.getText().toString() +" --- "+ Resultado.getText().toString()+"\n");
+        obj_editor.commit();
     }
 }
