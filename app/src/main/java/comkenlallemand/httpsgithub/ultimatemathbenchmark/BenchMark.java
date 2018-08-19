@@ -21,8 +21,9 @@ public class BenchMark extends AppCompatActivity {
         Head = findViewById(R.id.head);
         String nombre = getIntent().getStringExtra("name");
 
-        long ini,fin;
-
+        long ini,fin,n;
+        String saved = "";
+        n=10000000;
 
         switch (nombre){
             case "Calculo de PI": {
@@ -32,7 +33,10 @@ public class BenchMark extends AppCompatActivity {
                 fin = milis();
                 //System.out.println(ini);
                 //System.out.println(fin);
-                Resultado.setText(String.valueOf(fin - ini));
+                long temp = fin - ini;
+                temp = n/temp;
+                saved = String.valueOf(temp);
+                Resultado.setText(saved);
                 break;
             }
 
@@ -43,7 +47,10 @@ public class BenchMark extends AppCompatActivity {
                 fin = milis();
                 System.out.println(ini);
                 System.out.println(fin);
-                Resultado.setText(String.valueOf(fin - ini));
+                long temp = fin - ini;
+                temp = n/temp;
+                saved = String.valueOf(temp);
+                Resultado.setText(saved);
                 break;
             }
 
@@ -52,11 +59,16 @@ public class BenchMark extends AppCompatActivity {
                 ini = milis();
                 Pi();
                 fin = milis();
-                Resultado.setText(String.valueOf(fin - ini));
+                long temp = fin - ini;
+                temp = n/temp;
+                Resultado.setText(String.valueOf(temp));
                 ini = milis();
                 Fibonacci();
                 fin = milis();
-                Resultado.setText(Resultado.getText()+"\n"+String.valueOf(fin - ini));
+                temp = fin - ini;
+                temp = n/temp;
+                saved = Resultado.getText()+"   "+String.valueOf(temp);
+                Resultado.setText(Resultado.getText()+"\n"+String.valueOf(temp));
                 break;
             }
 
@@ -64,7 +76,7 @@ public class BenchMark extends AppCompatActivity {
                 Toast.makeText(this,"Error Desconocido",Toast.LENGTH_LONG).show();
             }
         }
-        save();
+        save(saved);
     }
 
     private void Pi(){
@@ -116,12 +128,11 @@ public class BenchMark extends AppCompatActivity {
         startActivity(anterior);
     }
 
-    private void save(){
+    private void save(String saved){
         SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
-        Toast.makeText(this, "Funcionando", Toast.LENGTH_SHORT).show();
         String texto = preferencias.getString("Resultados","");
         SharedPreferences.Editor obj_editor = preferencias.edit();
-        obj_editor.putString("Resultados",texto + Head.getText().toString() +" --- "+ Resultado.getText().toString()+"\n");
+        obj_editor.putString("Resultados",texto + Head.getText().toString() +" --- "+ saved+"\n");
         obj_editor.commit();
     }
 }

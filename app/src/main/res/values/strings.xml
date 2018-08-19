@@ -8,4 +8,5 @@
     <string name="Result">Resultado:</string>
     <string name="Return">Regresar</string>
     <string name="historial">Historial de Ejecuciones</string>
+    <string name="Delete">Borrar Historial</string>
 </resources>

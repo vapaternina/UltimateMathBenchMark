@@ -31,4 +31,12 @@ public class History extends AppCompatActivity {
         Intent anterior = new Intent(this,MainActivity.class);
         startActivity(anterior);
     }
+
+    public void Delete(View view){
+        SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferencias.edit();
+        obj_editor.putString("Resultados","");
+        obj_editor.commit();
+        Toast.makeText(this,"Historial Borrado",Toast.LENGTH_SHORT).show();
+    }
 }

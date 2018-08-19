@@ -27,7 +27,14 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top"
+        android:layout_marginTop="@dimen/bot"
+        android:theme="@style/ButtonWhite"
+        android:text="@string/Delete"
+        android:onClick="Delete"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:theme="@style/ButtonWhite"
         android:text="@string/Return"
         android:onClick="Return"/>
