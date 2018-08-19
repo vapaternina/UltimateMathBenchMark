@@ -19,9 +19,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/textSixe"
+            android:textSize="@dimen/top"
             android:text="@string/app_name"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorWhite"
             android:gravity="center"/>
 
     </LinearLayout>
@@ -31,13 +31,36 @@
         android:layout_height="match_parent"
         android:layout_weight="0.4"
         android:orientation="vertical"
-        android:paddingRight="@dimen/textSixe"
-        android:paddingLeft="@dimen/textSixe">
+        android:paddingRight="@dimen/top"
+        android:paddingLeft="@dimen/top">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ButtonWhite"/>
+            android:theme="@style/ButtonWhite"
+            android:text="@string/CalculoPI"
+            android:layout_marginTop="@dimen/top"
+            android:onClick="PI"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ButtonWhite"
+            android:text="@string/CalculoFibonacci"
+            android:onClick="Fibonacci"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ButtonWhite"
+            android:text="@string/Both"
+            android:onClick="Both"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/History"
+            android:layout_marginTop="@dimen/top"/>
 
 
 

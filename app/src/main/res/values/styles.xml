@@ -9,7 +9,13 @@
     </style>
     <style name="ButtonWhite" parent="Theme.AppCompat.Light">
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
-        <item name="textColorPrimary">@android:c</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="TVWhite" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/top</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

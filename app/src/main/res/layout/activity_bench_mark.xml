@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BenchMark"
+    android:background="@color/colorPrimary"
+    android:paddingLeft="@dimen/top"
+    android:paddingRight="@dimen/top"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top"
+        android:text="@string/app_name"
+        android:theme="@style/TVWhite"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TVWhite"
+        android:text="@string/Result"
+        android:paddingTop="20sp"/>
+
+    <TextView
+        android:id="@+id/Resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TVWhite"
+        android:text="@string/Filling"
+        android:textSize="60sp"
+        android:layout_marginTop="@dimen/top"/>
+
+
+</android.widget.LinearLayout>
