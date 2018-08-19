@@ -64,6 +64,7 @@ public class BenchMark extends AppCompatActivity {
                 Toast.makeText(this,"Error Desconocido",Toast.LENGTH_LONG).show();
             }
         }
+        save();
     }
 
     private void Pi(){
@@ -90,7 +91,7 @@ public class BenchMark extends AppCompatActivity {
                 pi = pi.subtract(temp);
             }
         }
-        System.out.println(pi);
+        //System.out.println(pi);
     }
 
     private void Fibonacci(){
@@ -103,7 +104,7 @@ public class BenchMark extends AppCompatActivity {
             a = b;
             b = temp;
         }
-        System.out.println(b);
+        //System.out.println(b);
     }
 
     private long milis(){
@@ -119,8 +120,6 @@ public class BenchMark extends AppCompatActivity {
         SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
         Toast.makeText(this, "Funcionando", Toast.LENGTH_SHORT).show();
         String texto = preferencias.getString("Resultados","");
-
-        //SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
         SharedPreferences.Editor obj_editor = preferencias.edit();
         obj_editor.putString("Resultados",texto + Head.getText().toString() +" --- "+ Resultado.getText().toString()+"\n");
         obj_editor.commit();

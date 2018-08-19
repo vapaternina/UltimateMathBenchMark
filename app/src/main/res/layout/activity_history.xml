@@ -3,43 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BenchMark"
+    tools:context=".History"
+    android:orientation="vertical"
     android:background="@color/colorPrimary"
-    android:paddingLeft="@dimen/top"
     android:paddingRight="@dimen/top"
-    android:orientation="vertical">
+    android:paddingLeft="@dimen/top">
 
     <TextView
-        android:id="@+id/head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/historial"
         android:layout_marginTop="@dimen/top"
-        android:text="@string/app_name"
         android:theme="@style/TVWhite"/>
 
     <TextView
+        android:id="@+id/lista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/TVWhite"
-        android:text="@string/Result"
-        android:paddingTop="20sp"/>
-
-    <TextView
-        android:id="@+id/Resultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/TVWhite"
-        android:text="@string/Filling"
-        android:textSize="60sp"
-        android:layout_marginTop="@dimen/top"/>
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="@dimen/top"
+        android:text="@string/Filling"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top"
         android:theme="@style/ButtonWhite"
         android:text="@string/Return"
-        android:layout_marginTop="@dimen/top"
         android:onClick="Return"/>
-
 
 </android.widget.LinearLayout>

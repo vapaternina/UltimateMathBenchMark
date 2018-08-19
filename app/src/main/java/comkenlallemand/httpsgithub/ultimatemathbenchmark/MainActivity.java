@@ -36,9 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void History(View view){
-        Intent siguiente = new Intent(this,BenchMark.class);
+        Intent siguiente = new Intent(this,History.class);
         siguiente.putExtra("name","Historial");
-        Toast.makeText(this,"Espera a que se ejecute",Toast.LENGTH_LONG).show();
         startActivity(siguiente);
     }
 }
