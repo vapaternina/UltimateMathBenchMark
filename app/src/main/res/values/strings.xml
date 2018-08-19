@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Ultimate Math BenchMark</string>
+    <string name="CalculoPI">Calcular PI</string>
+    <string name="CalculoFibonacci">Cacular Fibonacci</string>
+    <string name="Both">Calcular Ambos</string>
+    <string name="History">Todos los Puntajes</string>
+</resources>
